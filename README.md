@@ -3,6 +3,7 @@
 This plugin checks once a day whether your WordPress website has been set to No-Index with the WP built-in No-Index function. If so, it will be set to index again.
 
 
+
 ## Installation
 
 
