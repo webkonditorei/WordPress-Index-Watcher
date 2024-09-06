@@ -41,7 +41,7 @@ function run_index_watcher()
 
 	function custom_cron_schedule($schedules)
 	{
-		$schedules['every_two_minutes'] = array(
+		$schedules['every_day'] = array(
 			'interval' => 86400,
 			'display'  => __('Once Daily'),
 		);
@@ -53,7 +53,7 @@ function run_index_watcher()
 	function setup_index_watcher_cronjob()
 	{
 		if (!wp_next_scheduled('index_watcher_cronjob')) {
-			wp_schedule_event(time(), 'every_two_minutes', 'index_watcher_cronjob');
+			wp_schedule_event(time(), 'every_day', 'index_watcher_cronjob');
 		}
 	}
 	add_action('wp_loaded', 'setup_index_watcher_cronjob');
